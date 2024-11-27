@@ -1,8 +1,15 @@
-const array = [1, 3, 4, 6, 2, 5, 7];
-
 function removeElement(array, item) {
-    return array.filter(el => el !== item); 
+    const index = array.indexOf(item);
+    if (index !== -1) {
+        array.splice(index, 1);
+    } else {
+        console.log(`Елемент ${item} не знайдено в масиві.`); 
+    }
+    return array;
 }
 
-const updatedArray = removeElement(array, 4);
-console.log(updatedArray); 
+const array = [1, 3, 4, 6, 2, 5, 7];
+console.log(array); 
+removeElement(array, 5);
+
+console.log(array); 
